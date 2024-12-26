@@ -1,0 +1,406 @@
+/* Reset default styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Body and background */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #ff0000, #ffffff);
+    /* Red to White Gradient */
+    transition: background 1s ease-in-out;
+    /* Smooth transition for the background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+/* Main container */
+
+.quiz-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Light white/cream background */
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    border: 3px solid #ff0000;
+    /* Christmas red border */
+}
+
+
+/* Header */
+
+.quiz-header {
+    margin-bottom: 20px;
+}
+
+.quiz-header h1 {
+    font-size: 2.5rem;
+    color: #ff0000;
+    /* Christmas red */
+    font-family: 'Permanent Marker', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Quiz body */
+
+.quiz-body {
+    margin-bottom: 30px;
+}
+
+
+/* Question and options */
+
+.question {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.question p {
+    font-size: 1.2rem;
+    color: #4f4f4f;
+    /* Dark gray text for question */
+    margin-bottom: 10px;
+}
+
+.question ul {
+    list-style-type: none;
+    /* Remove bullet points */
+    padding-left: 0;
+    /* Remove left padding */
+    margin: 0;
+}
+
+.question li {
+    margin-bottom: 10px;
+    /* Add space between each option */
+    font-size: 1.1rem;
+    padding-left: 20px;
+    text-align: left;
+    /* Align text to the left */
+}
+
+
+/* Style for radio buttons */
+
+.question input[type="radio"] {
+    -webkit-appearance: radio;
+    /* Use default radio button styling */
+    -moz-appearance: radio;
+    /* For Firefox */
+    appearance: radio;
+    /* Standardize across browsers */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /* Make it circular */
+    border: 2px solid #ff0000;
+    /* Red border */
+    background-color: white;
+    /* White background */
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+
+/* Change radio button color when selected */
+
+.question input[type="radio"]:checked {
+    background-color: #ff0000;
+    /* Red background when selected */
+    border-color: #ff0000;
+    /* Red border when selected */
+}
+
+
+/* Button styles */
+
+.pagination-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff0000;
+    /* Christmas red */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.pagination-btn:hover {
+    background-color: #ff6666;
+    /* Lighter red when hovered */
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #ff0000;
+    /* Christmas red */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn:hover {
+    background-color: #ff6666;
+    /* Lighter red when hovered */
+}
+
+.submit-btn:focus {
+    outline: none;
+}
+
+
+/* Score container */
+
+.score-container {
+    text-align: center;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 3px solid #ff0000;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.score-header h2 {
+    font-size: 2.5rem;
+    color: #ff4d4d;
+}
+
+.score-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #28a745;
+    animation: slideIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.gift-container {
+    margin-top: 20px;
+    animation: pulse 1.5s infinite alternate;
+    animation: bounce 1s infinite alternate;
+}
+
+.gift-message {
+    font-size: 1.5rem;
+    color: #ff6347;
+    font-weight: bold;
+}
+
+.encouragement-message p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 20px;
+}
+
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.gift-icon {
+    font-size: 50px;
+    color: red;
+}
+
+
+/* Result section */
+
+.result {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 20px;
+    color: #4f4f4f;
+}
+
+
+/* Christmas Tree Icon Styling */
+
+.header-icon {
+    font-size: 5rem;
+    /* Increase icon size */
+    color: #006400;
+    /* Christmas green */
+    margin-top: 15px;
+    opacity: 1;
+    /* Initial opacity is 1 (fully visible) */
+    transition: opacity 0.3s ease;
+    /* Smooth fade effect */
+}
+
+
+/* Hover effect to fade the icon */
+
+.header-icon:hover {
+    opacity: 0.5;
+    /* Reduce opacity on hover to create fade effect */
+}
+
+
+/* Fataka (firecracker) animation */
+
+@keyframes fataka {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.fataka {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: fataka 0.6s ease-out;
+}
+
+.fataka:before {
+    content: '🎆';
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+
+/* Bomb explosion animation */
+
+@keyframes bombExplosion {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.bomb {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    animation: bombExplosion 0.8s ease-out;
+}
+
+.bomb:before {
+    content: '💣';
+    font-size: 40px;
+    color: #fff;
+    position: absolute;
+    top: 20%;
+    left: 15%;
+}
+
+
+/* Media Queries for responsive design */
+
+@media (max-width: 600px) {
+    /* Quiz container adjustments */
+    .quiz-container {
+        padding: 20px;
+    }
+    .quiz-header h1 {
+        font-size: 1.8rem;
+    }
+    .pagination-btn {
+        font-size: 14px;
+    }
+    .submit-btn {
+        font-size: 14px;
+    }
+    .score-text {
+        font-size: 1.5rem;
+    }
+    .question p {
+        font-size: 1rem;
+    }
+    .question li {
+        font-size: 1rem;
+    }
+    .result {
+        font-size: 1rem;
+    }
+}

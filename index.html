@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Christmas Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.0/dist/confetti.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to external CSS file -->
+</head>
+
+<body>
+    <!-- Existing Quiz Container (before submission) -->
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <i class="fas fa-tree header-icon"></i>
+            <h1>Christmas Trivia Quiz</h1>
+        </div>
+        <div id="quiz" class="quiz-body"></div>
+        <div class="pagination">
+            <button id="prevBtn" class="pagination-btn" onclick="navigate(-1)">Previous</button>
+            <button id="nextBtn" class="pagination-btn" onclick="navigate(1)">Next</button>
+        </div>
+        <button id="submitBtn" class="submit-btn" onclick="submitQuiz()" style="display: none;">Submit</button>
+    </div>
+
+    <div class="score-container" id="score-container" style="display: none;">
+        <div class="score-header">
+            <audio id="christmasAudio" src="songc.mp3" preload="auto"></audio>
+
+            <h2>🎉 Congratulations! 🎉</h2>
+            <p>You've completed the quiz!</p>
+        </div>
+        <div class="score-content">
+            <p class="score-text">Your Score: <span id="score" class="score"></span></p>
+        </div>
+
+        <!-- Santa Gift Image -->
+        <div class="gift-container">
+            <i class="fas fa-gift gift-icon"></i>
+
+            <p class="gift-message">Merry Christmas! 🎁</p>
+        </div>
+
+        <div class="encouragement-message">
+            <p>Great job! You spread the Christmas cheer with your knowledge! 🎄</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
